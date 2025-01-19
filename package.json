@@ -4,7 +4,7 @@
   "description": "This extention allow users to create a context for their work and help them to switch between them with ease",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.96.0"
+    "vscode": "^1.50.0"
   },
   "categories": [
     "Other"
@@ -12,12 +12,23 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "context-switch.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "contextSwitcher",
+          "title": "Context Switcher",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "contextSwitcher": [
+        {
+          "id": "contextSwitcherSidebar",
+          "name": "Context Switcher"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
